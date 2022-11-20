@@ -24,14 +24,14 @@ class setup():
 
     def determine_port(self, target, default_port):
         self.args = (target.split(":", 1) + [default_port])[:2]
-        self.args[1] = int(args[1])
-        return args[0], args[1]
+        self.args[1] = int(self.args[1])
+        return self.args[0], self.args[1]
 
     def handleChannelConnection(self,channel,host,port):
         socket = self.socker.socket()
         try:
             self.socket.connect(host,port)
-            except Exception as e:
+        except Exception as e:
                 return
 
         while True:
@@ -39,13 +39,13 @@ class setup():
         if self.socket in rData:
             data = self.socket.recv(1024)
             if len(data) == 0:
-                break
+                return
             self.channel.send(data)
 
         if self.channel in rData:
             data = self.channel.recv(1024)
             if len(data) == 0:
-                break
+                return
             self.socket.send(data)
     self.channel.close()
     self.socket.close()
@@ -53,12 +53,12 @@ class setup():
     '''
         transport: Defined in paramiko/auth_handler.py
     '''
-    def tunnel(self,server_port,rHost,transport):
+    def tunnel(self,server_port,rHost,transport)->...:
         transport.request_port_forward("", server_port)
         while True:
             self.channel = transport.accept(1000)
         if self.channel is None:
-            continue
+            return
         self.thread = threading.Thread(
             target=handler, args=(channel, rHost, remote_port)
         )
