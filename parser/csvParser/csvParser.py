@@ -3,11 +3,18 @@ import csv, os
 
 class csvParser():
     
-    def __init__(self):
+    def __init__(self, reader, writer):
         self.reader = None
         self.writer = None
     
-    
+    # TODO: defnine and finish these fns
+    def extract_csv(csv: pd.DataFrame):
+        pass
+   
+   
+    def csv_to_json(csv: pd.DataFrame):
+        pass
+     
     def open_file(self, file_name: str):
         file = open(file_name)
         # General method to parse
