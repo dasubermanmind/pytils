@@ -1,12 +1,12 @@
 
 import requests, os, bs4
 
-class scraper():
-    def __init__(self,url, location, datas=[], filename,endpoint='#', content, images):
+class Scraper():
+    def __init__(self,url, location, file_name,content, images, datas=[],endpoint='#'):
         self.url = url
         self.location = location
         self.datas= datas
-        self.filename = filename
+        self.filename = file_name
         self.endpoint = endpoint
         self.content = content
         self.images = images
