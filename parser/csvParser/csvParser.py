@@ -1,5 +1,6 @@
 
 import csv, os
+import pandas as pd
 
 class csvParser():
     

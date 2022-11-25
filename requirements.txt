@@ -1,0 +1,4 @@
+pandas
+paramiko
+bs4
+requests
