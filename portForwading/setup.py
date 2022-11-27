@@ -13,6 +13,7 @@ ssh_port = 22
 class setup():
     '''
     Define the target (server), user, password etc
+    TODO: Should also define how the socket protocols work
     '''    
     def __init__(self, client, args, channel, socket, thread):
         self.client = client
